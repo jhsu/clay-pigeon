@@ -1,0 +1,13 @@
+body  { margin: 0; padding: 0;
+        background: #0A0A0D; color: #FFFFDC;}
+
+h1, h2, h3 {}
+h1 {}
+h2 {}
+h3 {}
+
+ul    { list-style: none; padding: 0;}
+ul li {}
+
+li.new  { background: #cfcfcf;}
+li.late { background: red;}

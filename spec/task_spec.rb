@@ -41,5 +41,15 @@ describe Task do
     @task.done = true
     @task.status.should == 'old'
   end
+
+  it "should pull the date out of input_text" do
+    @task.input_text = 'i hope you know this is due 10/31'
+    @task.pulled_date.should == '10/31'
+  end
+
+  it "should set a due date from the pulled date" do
+    @task.date = "10/31"
+    @task.due.should == Time.parse("10/31")
+  end
 end
 

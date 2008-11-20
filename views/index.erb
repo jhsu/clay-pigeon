@@ -5,6 +5,6 @@
 
 <ul>
 <% tasks.each do |task| %>
-  <li><%= task.title %> <a href="/<%= task.id %>/done" title="">done</a> <a href="" title="">delete</a></li>
+  <li class="<%= task.status %>"><%= task.title %> <a href="/<%= task.id %>/done" title="">done</a> <a href="/<%= task.id %>/delay" title="">delay</a></li>
 <% end %>
 </ul>

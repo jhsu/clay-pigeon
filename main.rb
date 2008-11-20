@@ -23,8 +23,23 @@ get '/' do #index
 end
 
 post '/tasks' do #create
-  task = Task.new(:title => params[:task_input], :created_at => Time.now)
+  task = Task.new(:created_at => Time.now)
+  task.input_text = params[:task_input].to_s
   task.save
+  redirect '/'
+end
+
+get '/:task/delay' do #delay
+  if task = Task[params[:task]]
+    task.delay
+  end
+  redirect '/'
+end
+
+get '/:task/done' do #destroy temporary solution
+  if task = Task[params[:task]]
+    task.destroy
+  end
   redirect '/'
 end
 
